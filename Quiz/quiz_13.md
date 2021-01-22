@@ -1,4 +1,4 @@
-*013* 
+**013** 
 Given an array of food items and price, calculate the total price based on the table of tax categories below*
 | Item        | Tax rate |
 |-------------|----------|
