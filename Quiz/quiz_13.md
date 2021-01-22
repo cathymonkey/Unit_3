@@ -8,4 +8,4 @@ Given an array of food items and price, calculate the total price based on the t
 
 ```.py
 
-def total(a,b):
+def total(item, price):
