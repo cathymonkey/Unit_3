@@ -33,6 +33,11 @@ INSERT INTO email(email)
 VALUES('isabear.wow@gmail.com');
 ```
 
+Things to be done:
+1. redo the ER diagram( user and order )
+2. finish ORM
+3. search hash function  -- what Hash functions are and think how they could be used to improve the security of the private data in the database.
+
 
 - ## Hash Function ##
 
