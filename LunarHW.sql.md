@@ -1,6 +1,7 @@
 # Generic application 
 - ## ER & UML Diagram ##
-    [ER & UML Diagram](https://lucid.app/lucidchart/7f5717f1-6e19-45b9-b386-3edb2a63f7c8/edit?beaconFlowId=0377A30A9A8E3BED&page=0_0#?folder_id=home&browser=icon) 
+    
+    [ER & UML Diagram](https://lucid.app/lucidchart/invitations/accept/adc2508a-af71-41a7-95dc-f0eb7121d8a1) 
 
 - ## SQL Script ##
 ```.mySQL
