@@ -9,16 +9,9 @@ CREATE TABLE IF NOT EXISTS users(
     username VARCHAR(20),
     age INTEGER,
     email VARCHAR(60),
-    phone INTEGER
 );
 
-CREATE TABLE email(
-    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-    user_id INTEGER,
-    email VARCHAR(60),
-    FOREIGN KEY(user_id) REFERENCES users(id)
 
-);
 
 INSERT INTO users(username,age,email,phone)
 VALUES('monkeyking',5000,'monkeyking@gmail.com',15087420901);
@@ -29,14 +22,9 @@ VALUES('monkeyking@gmail.com');
 INSERT INTO users(username,age,email,phone)
 VALUES('isabear',38,'isabear.wow@gmail.com',13389032571);
 
-INSERT INTO email(email)
-VALUES('isabear.wow@gmail.com');
 ```
 
-Things to be done:
-1. redo the ER diagram( user and order )
-2. finish ORM
-3. search hash function  -- what Hash functions are and think how they could be used to improve the security of the private data in the database.
+ORM
 
 
 - ## Hash Function ##
