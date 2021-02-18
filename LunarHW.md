@@ -11,19 +11,43 @@ CREATE TABLE IF NOT EXISTS users(
     email VARCHAR(60),
 );
 
-INSERT INTO users(username,age,email,phone)
-VALUES('monkeyking',5000,'monkeyking@gmail.com',15087420901);
+INSERT INTO users(username,age,email)
+VALUES('monkeyking',5000,'monkeyking@gmail.com');
 
-INSERT INTO email(email)
-VALUES('monkeyking@gmail.com');
+INSERT INTO users(username,age,email)
+VALUES('isabear',38,'isabear.wow@gmail.com');
 
-INSERT INTO users(username,age,email,phone)
-VALUES('isabear',38,'isabear.wow@gmail.com',13389032571);
+INSERT INTO users(INSERT INTO users(username,age,email)
+VALUES('mochi',8,'mochidoesmaths@math.com');
+
 
 ```
 
-ORM
+- ## ORM ##
+```.mysql
+from sqlalchemy import Column, String, Integer)
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 
+
+base = declarative_base()
+engine = create_engine('sqlite:///genericApp.sqlite')
+session = sessionmaker(bind=engine)
+
+class Users(base):
+    __tablename__ = 'users'
+    id = Column(Integer,primary_key= True)
+    username = Column(String)
+    age = Column(Integer)
+    email = Column(String)
+ 
+
+base.metadata.create_all(engine)
+
+user = Users('BananaEater',20,'greatbanana@sales.com')
+session.add(user)
+session.commit()
 
 - ## Hash Function ##
 
