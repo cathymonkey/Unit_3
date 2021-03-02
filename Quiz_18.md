@@ -26,3 +26,5 @@ class Solution:
 
 print(Solution.single_digit("39"))
 ```
+Test result:
+![quiz18.png](https://github.com/cathymonkey/Unit_3/blob/main/Images/quiz18.png)
