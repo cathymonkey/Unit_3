@@ -29,3 +29,5 @@ print(Solution.single_digit("39"))
 Test result:
 
 ![quiz18.png](https://github.com/cathymonkey/Unit_3/blob/main/Images/quiz18.png)
+
+When step = 7, one of the numbers is 68898. I guess there's no number that needs 10 steps to multiply to become a single digit.
