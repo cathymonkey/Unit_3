@@ -10,9 +10,10 @@ Since it took us 3 steps to reach a number with only 1 digit, the output is 3.
 ```.py
 class Solution:
     def __init__(self,N):
-        self.N: str = self.N
+        self.N: str = N
 
-    def single_digit(N:str):
+    def single_digit(self):
+        N = self.N
         step = 0
         while len(N) > 1:
             product = 1
@@ -24,7 +25,7 @@ class Solution:
 
         return step
 
-print(Solution.single_digit("39"))
+print(Solution("39").single_digit())
 ```
 Test result:
 
