@@ -8,13 +8,17 @@ Step 3: 1 * 4 = 4
 Since it took us 3 steps to reach a number with only 1 digit, the output is 3.
 
 ```.py
+# Create class Solution to solve the question
 class Solution:
+# Initialize the input N and N is a string
     def __init__(self,N):
         self.N: str = N
-
+# Create a function single_digit to find the steps to finish the task  
     def single_digit(self):
         N = self.N
+        # create a variable step to count how many steps
         step = 0
+        # to let each digit of number multiply each other until the number has only one digit
         while len(N) > 1:
             product = 1
             for i in range(len(N)):
