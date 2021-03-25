@@ -1,7 +1,7 @@
 # iEat
 
 ``iEat`` -- a food stock app
-
+ ~~this~~
 
 # Table of contents
 1. [Introduction](#Criteria A)
