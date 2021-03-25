@@ -1,8 +1,13 @@
 # iEat
 
 ``iEat`` -- a food stock app
+{:.no_toc}
+
+- TOC
+{:toc}
+
 # Table of contents
-1.[A](#Criteria A: Planning)
+1. [A](#Criteria A: Planning)
 
 ## Criteria A: Planning
 - ### Context of the problem
