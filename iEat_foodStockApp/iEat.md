@@ -2,7 +2,7 @@
 
 ``iEat`` -- a food stock app
 # Table of contents
-1. [Criteria A](#Criteria A: Planning)
+1. [Criteria A](##Criteria A: Planning)
 
 # Table of Contents
 1. [Criteria A: Planning](#Criteria A: Planning)
