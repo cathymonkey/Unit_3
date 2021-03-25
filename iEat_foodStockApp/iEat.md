@@ -4,7 +4,7 @@
 
 
 # Table of contents
-1. [Introduction](#introduction)
+1. [Introduction](#Criteria A: Planning)
 2. [Some paragraph](#paragraph1)
 
 # Table of Contents
