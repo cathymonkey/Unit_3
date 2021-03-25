@@ -1,2 +1,4 @@
-## Criteria A: Context##
+# iEat
+
+## Criteria A: Context
 
