@@ -4,12 +4,12 @@
 
 
 ## Table of Contents
-
-* [Criteria A: Planning](#Criteria A: Planning)
-* [Criteria B: Design](##Criteria B: Design)
-* [Criteria C: Development](##Criteria C: Development)
-* [Criteria D: Functionality](##Criteria D: Functionality)
-* [Criteria E: Evaluation](##Criteria E: Evaluation)
+=======================
+  * [Criteria A: Planning](#Criteria A: Planning)
+  * [Criteria B: Design](##Criteria B: Design)
+  * [Criteria C: Development](##Criteria C: Development)
+  * [Criteria D: Functionality](##Criteria D: Functionality)
+  * [Criteria E: Evaluation](##Criteria E: Evaluation)
 
 ## Criteria A: Planning
 ### + Context of the problem
