@@ -14,6 +14,8 @@
   * [Criteria D: Functionality](##Criteria D: Functionality)
   * [Criteria E: Evaluation](##Criteria E: Evaluation)
 
+## This is the introduction <a name="Criteria A"></a>
+
 ## Criteria A: Planning
 ### + Context of the problem
 
