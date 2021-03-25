@@ -1,23 +1,12 @@
 # iEat
 
 ``iEat`` -- a food stock app
- ~~this~~
 
-# Table of contents
-1. [Introduction](#Criteria A)
-2. [Some paragraph](#paragraph1)
 
-# Table of Contents
-1. [Criteria A: Planning](#Criteria A: Planning)
-  * [Criteria B: Design](##Criteria B: Design)
-  * [Criteria C: Development](##Criteria C: Development)
-  * [Criteria D: Functionality](##Criteria D: Functionality)
-  * [Criteria E: Evaluation](##Criteria E: Evaluation)
 
-## This is the introduction <a name="Criteria A"></a>
 
 ## Criteria A: Planning
-### + Context of the problem
+- ### Context of the problem
 
 ## Criteria B: Design
 ### -Sketch
