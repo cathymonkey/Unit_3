@@ -14,22 +14,22 @@ Table of Contents
 ### + Context of the problem
 
 ## Criteria B: Design
-### + Sketch
-### + Flow Diagram
-### + UML Diagram
-### + ER Diagram
-### + Normalised Tables
+### - Sketch
+### - Flow Diagram
+### - UML Diagram
+### - ER Diagram
+### - Normalised Tables
 
 ## Criteria C: Development
-### + .kv
-### + .py
+### - .kv
+### - .py
 
 ## Criteria D: Functionality
-### + Success Criteria
+### - Success Criteria
 
 ## Criteria E: Evaluation 
-### + Alpha testing
-### + Beta testing
+### - Alpha testing
+### - Beta testing
 
 
 
