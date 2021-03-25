@@ -1,5 +1,5 @@
 # iEat
--./gh-md-toc https://github.com/ekalinin/envirius/blob/master/README.md
+
 ``iEat`` -- a food stock app
 
 Table of Contents
