@@ -1,4 +1,4 @@
-# iEat ##food stock app
+# iEat ## food stock app
 
 ## Criteria A: Context
 
