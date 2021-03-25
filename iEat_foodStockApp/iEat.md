@@ -4,14 +4,14 @@
 
 
 ## Table of Contents
-=======================
+
   * [Criteria A: Planning](#Criteria A: Planning)
   * [Criteria B: Design](##Criteria B: Design)
   * [Criteria C: Development](##Criteria C: Development)
   * [Criteria D: Functionality](##Criteria D: Functionality)
   * [Criteria E: Evaluation](##Criteria E: Evaluation)
 
-## Criteria A: Planning
+## Criteria A: Planning<a name="Criteria A: Planning"></a>
 ### + Context of the problem
 
 ## Criteria B: Design
