@@ -1,7 +1,8 @@
 # iEat
 
 ``iEat`` -- a food stock app
-
+# Table of contents
+1.[A](#Criteria A: Planning)
 
 ## Criteria A: Planning
 - ### Context of the problem
