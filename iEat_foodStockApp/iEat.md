@@ -1,7 +1,8 @@
 # iEat
 
 ``iEat`` -- a food stock app
-
+# Table of contents
+1. [Introduction](#introduction)
 
 ## Table of Contents
 
@@ -31,6 +32,7 @@
 ## Criteria E: Evaluation 
 ### - Alpha testing
 ### - Beta testing
+-[x]
 
 
 
