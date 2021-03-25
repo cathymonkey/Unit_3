@@ -3,10 +3,6 @@
 ``iEat`` -- a food stock app
 
 
-
-
-----
-
 ## Criteria A: Planning
 {:toc}
 - ### Context of the problem
@@ -35,6 +31,6 @@
 
 
 - [ ] this is an incomplete item
-----
+
 
 
