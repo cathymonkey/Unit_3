@@ -15,7 +15,7 @@
 ### + Context of the problem
 
 ## Criteria B: Design
-### - Sketch
+### -Sketch
 ### - Flow Diagram
 ### - UML Diagram
 ### - ER Diagram
