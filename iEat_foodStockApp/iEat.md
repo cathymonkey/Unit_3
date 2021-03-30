@@ -19,6 +19,8 @@ I am more familiar with and it will take less time for the user to wait. The sec
 changes to another OS system, the program will still work hopefully. Another reason is because of the popularity of python usage and for any further updates of the 
 app, learning resources can be easily found and instructors who know Python will be more available.
 
+## Criteria B: Design
+
 - ### Sketch
 <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/sketch.jpeg" width = "600" height = "500" >
 *Fig 1. sketch for GUI*
