@@ -30,8 +30,7 @@ Fig 1. sketch for GUI
 - ### UML Diagram
 
 - ### ER Diagram
-![t_ERdiagram.png](https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_ERdiagram.png)
-<img scr = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_ERdiagram.png" width = "700" height = "400">
+![t_ERdiagram](https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_ERdiagram.png)
 Fig 4. ER Diagram for the system ( One to one relationship between the user and the food storage database)
 
 - ### Normalised Tables
