@@ -54,6 +54,8 @@ Fig 4. ER Diagram for the system ( One to one relationship between the user and 
 
 
 ## Criteria C: Development
+The following is the code for the program.
+
 - ###  .kv
 - ###  .py
 
