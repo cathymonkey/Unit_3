@@ -30,7 +30,7 @@ Fig 1. sketch for GUI
 Fig 2. System Flow Diagram 
 
 - ### UML Diagram
-<img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_UML.png" width = "750" height = "420">
+<img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_UML.png" width = "650" height = "350">
 Fig 3. UML Diagram
 
 - ### ER Diagram
@@ -38,6 +38,20 @@ Fig 3. UML Diagram
 Fig 4. ER Diagram for the system ( One to one relationship between the user and the food storage database)
 
 - ### Normalised Tables
+**Table 1: User**
+| id |  username |       email      | password |
+|:--:|:---------:|:----------------:|:--------:|
+|  1 |    test   |  test@gmail.com  |   test   |
+|  2 |   monkey  | monkey@gmail.com | mmmmmm:) |
+|  3 | is_a_bear |  isabear@isak.jp | bearbear |
+
+**Table 2: User and food storage**
+| id | user_id |       item      | calorie(kcal) | expired date |
+|:--:|:-------:|:---------------:|:-------------:|--------------|
+|  1 |    1    |     1 banana    |      105      | 2021.4.2     |
+|  2 |    1    |     1 apple     |       95      | 2021.4.10    |
+|  3 |    1    | soy milk(100ml) |       54      | 2021.5.25    |
+
 
 ## Criteria C: Development
 - ###  .kv
