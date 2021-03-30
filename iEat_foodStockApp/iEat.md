@@ -30,7 +30,7 @@ Fig 1. sketch for GUI
 Fig 2. System Flow Diagram 
 
 - ### UML Diagram
-
+<img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_UML.png" width = "750" height = "420">
 Fig 3. UML Diagram
 
 - ### ER Diagram
