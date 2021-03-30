@@ -13,6 +13,7 @@ To solve the problem, I am going to use python and its kivy library to create a 
  1) a login/register system for validating the user and protecting the privacy of the user;
  2) an activity that allows the user to add items into the food stock;
  3) a table shown in the app UI recording items, calories and the expired date.
+
 The reason why I choose python and kivy is because firstly, I had experience with python before so it will be more comfortable for me to develop with the language 
 I am more familiar with and it will take less time for the user to wait. The second reason is that kivy supports cross platform operation so even if my client 
 changes to another OS system, the program will still work hopefully. Another reason is because of the popularity of python usage and for any further updates of the 
