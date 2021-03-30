@@ -25,11 +25,14 @@ app, learning resources can be easily found and instructors who know Python will
 <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/sketch.jpeg" width = "600" height = "500" >
 Fig 1. sketch for GUI
 
+-### System Flow Diagram
+
 - ### UML Diagram
 
 - ### ER Diagram
 <img scr = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_ERdiagram.png" width = "700" height = "400">
-Fig 3. ER Diagram for the system ( One to one relationship between the user and the food storage database)
+Fig 4. ER Diagram for the system ( One to one relationship between the user and the food storage database)
+
 - ### Normalised Tables
 
 ## Criteria C: Development
@@ -45,5 +48,6 @@ Fig 3. ER Diagram for the system ( One to one relationship between the user and 
 
 
 - [ ] this is an incomplete item
+
 
 
