@@ -9,7 +9,7 @@ My client Isabel wants to have an app which includes a database to help her bett
 food she has and the expired date of the food as well as keep track on the calories she intakes for every meal. 
 
 - ### Justification of the problem
-To solve the problem, I am going to use python and its kivy library to create a program to fulfill the following functionalities:
+To solve the problem, I am going to use python and its kivy library and **SQL Alchemy** to create a program to fulfill the following functionalities:
  1) a login/register system for validating the user and protecting the privacy of the user;
  2) an activity that allows the user to add items into the food stock;
  3) a table shown in the app UI recording items, calories and the expired date.
