@@ -62,7 +62,14 @@ The following is the code for the program.
 
 ## Criteria D: Functionality
 - ### Success Criteria
-
+| Criteria                                                                                                           | Expected outcome                                                                                                           | Met? |
+|--------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|------|
+| 1.The app has a login/register system.                                                                             | The user can register and then login the system successfully.                                                              | Met  |
+| 2.The app has two databases. One is for users' information and  the other is for food storage.                     | New users and new food items can be added.                                                                                 |      |
+| 3.There is a table linked to the food storage database in the  app UI to show the items,calories and expired date. | The user can see the three attributes of saved food item(s) in the storage screen in the form of a table.                  |      |
+| 4.There are multiple screens for clear navigation.                                                                 | The user can see a login screen, a register screen, a homescreen, a food storage screen and a add-item screen.             | Met  |
+| 5. When adding the items, there is a calendar for the user to pick the date.                                       | The user can use the calendar to pick the date.                                                                            |      |
+| 6. The data in the database is not redundant.                                                                      | The user can see "user already exists" when registering by using the same username or email or password as other people's. | Met  |
 
 ## Criteria E: Evaluation 
 - ### Alpha testing
