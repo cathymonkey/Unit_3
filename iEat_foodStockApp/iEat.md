@@ -5,11 +5,12 @@
 
 ## Criteria A: Planning
 - ### Context of the problem
-My client Isabel wants to have an app which includes a database to help her better organize her food stock. By using this app, she wants to get an overview of what 
-food she has and the expired date of the food as well as keep track on the calories she intakes for every meal. 
+My client Isabel wants to have an app which includes a database to help her better organize her food stock. She used to record on an online note but she seldom 
+updated due to the usability of the online note and things were not recorded in neat. Therefore, by using this app, she wants to get a clear overview of
+what food she has and the expired date of the food as well as keep track on the calories she intakes for every meal.
 
 - ### Justification of the problem
-To solve the problem, I am going to use python and its kivy library and **SQL Alchemy** to create a program to fulfill the following functionalities:
+To solve the problem, I am going to use python and its kivy library and SQL Alchemy to create a program to fulfill the following functionalities:
  1) a login/register system for validating the user and protecting the privacy of the user;
  2) an activity that allows the user to add items into the food stock;
  3) a table shown in the app UI recording items, calories and the expired date.
@@ -61,6 +62,7 @@ The following is the code for the program.
 
 ## Criteria D: Functionality
 - ### Success Criteria
+
 
 ## Criteria E: Evaluation 
 - ### Alpha testing
