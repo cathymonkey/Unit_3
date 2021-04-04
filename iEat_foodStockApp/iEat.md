@@ -299,7 +299,8 @@ Figure 6. Register Screen
                 on_release:
                     root.try_register()
                     root.parent.current = "LoginScreen"
-
+                    
+    # Create a special layout for the buttons to freely positioned
     FloatLayout:
         MDFillRoundFlatButton:
             text:"Back"
