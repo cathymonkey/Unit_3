@@ -849,7 +849,17 @@ MainApp().run()
 
 - ### Beta testing
 
-- ### 
+- ### App Improvements
+- Cloud backup
+- Functionalities 
+  - allow the user to edit the amount of the food like the picture shows(amazon) and edit the table in general
+  - Toast functions to show the error more clearly to the user
+  - logo on the desktop when opening the app
+  - make it responsive
+  - add more functions to the app
+  - stregthen the interaction with the user. eg."Welcome xxxx!" 
+  - etc.
+  - 
 - [ ] this is an incomplete item
 
 
