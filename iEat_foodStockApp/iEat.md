@@ -853,7 +853,7 @@ MainApp().run()
 - Cloud backup
 - Functionalities 
   - allow the user to edit the amount of the food like the picture shows(amazon) and edit the table in general
-  <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_amount.png" width = "300" height = "280" >
+  <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_opt_amount.png" width = "330" height = "180" >        <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_amount.png" width = "300" height = "280" >
   
   - Toast functions to show the error more clearly to the user
   - logo on the desktop when opening the app
