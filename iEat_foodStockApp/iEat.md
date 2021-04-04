@@ -70,7 +70,7 @@ Fig 4. ER Diagram for the system ( One to one relationship between the user and 
 The following is the code for the program.
 
 - ###  .kv
-(Need to explain the layouts and different elements, widgets used)
+
 
 The following is for creating the screens included in the app. The app includes a login screen, a register screen, a home screen, a storage screen and an add-item 
 screen.
@@ -94,7 +94,7 @@ ScreenManager:
         name:"AddScreen"
 
 ```
-The following is for the UI for the login screen. It looks like this:
+The following is for the UI for the login screen. The login screen should allow the user to type in personal information to log in. Also, there is a button `Register Here` to guide the user to the register if the user hasn't had an account yet. It looks like this:
 <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/login.png" width = "720" height = "560">
 
 Figure 5. Login Screen
@@ -107,12 +107,13 @@ Figure 5. Login Screen
 
         FitImage:
             source:'login_regis.jpeg'
-
+# Create the first MDCard in the screen to show the name of the app
     MDCard:
         size_hint:0.2,0.15
         elevation: 30
         pos_hint:{"center_x":.5,"center_y":.7}
         orientation:"vertical"
+        # next is to change the background color of the MDCard by using R,G,B,T(ransparency) and it will be commonly used througout the program.
         md_bg_color:[255/255,255/255,255/255,0.4]
 
         MDLabel:
@@ -121,6 +122,7 @@ Figure 5. Login Screen
             halign:"center"
             theme_text_color: "Custom"
             text_color: 128, 0, 0, 1
+ # Create a second MDCard to show the input textfields and buttons for directing other screens 
     MDCard:
         size_hint:0.6,0.586
         elevation: 10
@@ -135,20 +137,25 @@ Figure 5. Login Screen
             padding: dp(30)
             spacing: dp(25)
 
-
+           ## Create textfields for users to input the info
             MDTextField:
                 id: username_input
                 hint_text:"Username"
+                # set up the maximum length for valid input
                 max_text_length: 20
                 color_mode: "primary"
+                # turn on the `helper_text_mode` to show the reason of errors when the user inputs info inproperly
                 helper_text:"Invalid username"
                 helper_text_mode:"on_error"
+                # set up an icon on the very right of the textfield to help visualize what information the user should provide
                 icon_right:"account-box"
+                # Set up that the textfield is required to fill out.
                 required:True
 
             MDTextField:
                 id: email_input
                 hint_text:"Email"
+                # set up the maximum length for a valid email
                 max_text_length: 50
                 color_mode:"primary"
                 icon_right:"email"
@@ -159,6 +166,7 @@ Figure 5. Login Screen
             MDTextField:
                 id: password_input
                 hint_text:"Password"
+                # set up the maximum length for a valid password 
                 max_text_length: 50
                 color_mode: "primary"
                 icon_right:"lock"
@@ -166,17 +174,19 @@ Figure 5. Login Screen
                 helper_text_mode:"on_error"
                 required: True
                 password: True
+        # Create a horizontal and a vertical BoxLayout to horizontally align the two buttons -- Register Here and Log in        
         MDBoxLayout:
             id: content
             adaptive_height: True
             orientation:"horizontal"
             padding: dp(30)
             spacing: dp(20)
-
+            # button
             MDRaisedButton:
                 text:"Log in"
                 size: 150,100
                 pos_hint:{"center_x":0.8,"bottom":1}
+                # connect to the .py, validating the user
                 on_release:
                     root.try_login()
 
@@ -187,16 +197,18 @@ Figure 5. Login Screen
                 orientation:"vertical"
                 padding: dp(30)
                 spacing: dp(20)
-
+           # button
             MDRaisedButton:
                 text: "Register Here"
                 size: 150,100
                 pos_hint:{"center_x":0.4,"bottom":1}
+                # connect to the .py, starting registration
                 on_release:
                     root.parent.current = "RegisterScreen"
 
 ```
-The following is the UI for the register screen.
+The following is the UI for the register screen. It's pretty similar to the login screen but the user need to confirm their passwords by typing twice and there is 
+a button `submit` for uploading the information to the database. `Back`button is for people who accidentally click `Register Here`to return to the login screen. 
 <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/register.png" width = "720" height = "560">
 
 Figure 6. Register Screen
@@ -237,7 +249,7 @@ Figure 6. Register Screen
             padding: dp(30)
             spacing: dp(14)
 
-
+           # Create textfields to allow the user to input info 
             MDTextField:
                 id: regis_username_input
                 hint_text:"Username"
@@ -283,6 +295,7 @@ Figure 6. Register Screen
             MDRaisedButton:
                 text:"Submit"
                 size: 120,80
+                # connect to the .py, registering 
                 on_release:
                     root.try_register()
                     root.parent.current = "LoginScreen"
@@ -295,11 +308,13 @@ Figure 6. Register Screen
             text_size: self.size
             size_hint: 0.08,0.08
             pos_hint:{"x":0.055,"top":0.54}
+            #set up the background color of the button 
             background_color: 138/255,69/255,19/255,0.4
+            # connect to the.py, returning to the login screen 
             on_release:
                 root.parent.current = "LoginScreen"
 ```
-The following is the UI for the home screen.
+The following is the UI for the home screen. It contains two buttons `Go to Your Food Storage` and `Add Food`.
 <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_home.png" width = "720" height = "560">
 
 Figure 7. Home Screen
@@ -359,10 +374,11 @@ Figure 7. Home Screen
                 root.parent.current = "LoginScreen"
 
 ```
-The following is the UI for the add screen.
+The following is the UI for the add screen. There are two textfields for users to input and one button for picking the food expired date.
 <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_add.png" width = "720" height = "560">
 
 Figure 8.1 Add Screen
+
 As expected, there is a calendar for date picking.
 <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_calendar.png" width = "720" height = "560">
 
@@ -384,7 +400,7 @@ Figure 8.2 Add Screen - calendar
         pos_hint: {"center_x": 0.5, "top": 0.64}
         orientation: "vertical"
         md_bg_color:[255/255,255/255,255/255,0.55]
-
+ # Create a label first to show the title of the screen 
         MDLabel:
             text:"ADD NEW ITEM"
             text_color: 128, 0, 0, 1
@@ -408,7 +424,7 @@ Figure 8.2 Add Screen - calendar
             helper_text:"Required to fill out"
             helper_text_mode:"on_error"
             required: True
-
+       # Create another MDBoxLayout to align the buttons with the textfields above 
         MDBoxLayout:
 
             orientation:"horizontal"
@@ -419,6 +435,7 @@ Figure 8.2 Add Screen - calendar
                 text: "Select expired date"
                 size:dp(58)*3, dp(50)
                 pos_hint: {'center_x': .15, 'center_y': .5}
+                # connect to the.py, showing the calendar
                 on_release:
                     root.show_date_picker()
 
@@ -427,9 +444,16 @@ Figure 8.2 Add Screen - calendar
         MDFillRoundFlatButton:
             text:"   save   "
             pos_hint:{"center_x":0.5,"center_y":0.75}
+            #connect to the .py, uploading new item to the database and then back to the homescreen
             on_release:
                 root.add_item()
                 root.parent.current = "HomeScreen"
+                
+       MDLabel:
+           id: date_picker_label
+           size_hint: None, None
+           size: dp(48)*3, dp(48)
+           pos_hint: {'center_x': .25, 'center_y': .5}
 
 
 
@@ -444,8 +468,10 @@ Figure 8.2 Add Screen - calendar
                 root.parent.current = "HomeScreen"
 
 ```
-The following is the UI for the store screen.
+The following is the UI for the store screen. It will display the user's food stock in the form of a table showing the name, calories and expired date of each 
+item.
 <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_storage.png" width = "720" height = "560">
+
 Figure 9. Store Screen
 
 ```
@@ -496,21 +522,21 @@ Figure 9. Store Screen
                     row_force_default: True
                     pos_hint_y: 0
 
-            #        Column 1
+            #        Column 1 item
                     MDLabel:
                         id: col1
                         text: "Item"
                         font_style: "Subtitle1"
                         halign: "center"
 
-            #        Column 2
+            #        Column 2 caloreis
                     MDLabel:
                         id: col2
                         text: "Calories"
                         font_style: "Subtitle1"
                         halign: "center"
 
-            #        Column 3
+            #        Column 3 expired date
                     MDLabel:
                         id: col3
                         text: "Expired Date"
@@ -561,11 +587,11 @@ Create database for users and foodstock.
 ```.py
 Base = declarative_base()
 
-
+# ORM 
 class User(Base):
     __tablename__ = 'User'
     id = Column(Integer, primary_key=True, autoincrement=True)
-    username = Column(String(20))
+    username = Column(String(20)) # 20 means the max. length of username is 20 characters.
     email = Column(String(50))
     password = Column(String(50))
 
@@ -573,6 +599,7 @@ class User(Base):
         self.username = username
         self.email = email
         self.password = password
+        
 class Storage(Base):
     __tablename__ = "Storage"
     id = Column(Integer,primary_key = True,autoincrement=True)
@@ -587,7 +614,7 @@ class Storage(Base):
         self.expired_date = expired_date
         self.User_id = User_id
 
-
+# Connect to SQL 
 engine = create_engine('sqlite:///foodstock.sqlite')
 session = sessionmaker()
 session.configure(bind=engine)
@@ -636,7 +663,6 @@ def try_login(self):
             LoginScreen.User_id = validate_user.id
             stored_password = s.query(User).get(validate_user.id).password
 
-            print("stored_password")
             if LoginScreen.verify_password(stored_password,password) == True:
                 self.parent.current = 'HomeScreen'
 
@@ -667,10 +693,13 @@ class RegisterScreen(MDScreen):
     def hash_password(self):
         password = self.ids.regis_password_input.text
         """Hash a password for storing."""
-        salt = hashlib.sha256(os.urandom(60)).hexdigest().encode('ascii') #hashing a ramdom sequence with 60 bits: produces 256 bits or 64 hex chars
+        #hashing a ramdom sequence with 60 bits: produces 256 bits or 64 hex chars
+        salt = hashlib.sha256(os.urandom(60)).hexdigest().encode('ascii')
+        
         pwdhash = hashlib.pbkdf2_hmac('sha256', password.encode('utf-8'),
                                       salt, 100000)
-        pwdhash = binascii.hexlify(pwdhash) #hashing the password with the salt producing 256 bits or 64 hex chars
+        #hashing the password with the salt producing 256 bits or 64 hex chars                              
+        pwdhash = binascii.hexlify(pwdhash)
         return (salt + pwdhash).decode('ascii') #total lenght is 128 chars or 512 bits
 ```
 
@@ -682,7 +711,9 @@ Then create a function for registering. In our register system, we set several r
 3. The user has to input the password twice to confirm the password.
 4. The user cannot register with nothing.
 5. The maximum length for each textfield is shown in the app. The characters are counted automatically, so if the length excceeds, the textfield will turn red.
+*(Rule 5 can be fullfilled in .kv)*
 6. A valid email has to contain "@".
+7. The user cannot register again withe the same username.
 ```.py
 def try_register(self):
         newUsername = self.ids.regis_username_input.text
@@ -691,16 +722,20 @@ def try_register(self):
         Password_check = self.ids.password_check.text
         hash_password = RegisterScreen.hash_password(self)
         
-       if newPassword == Password_check:
+       # Rule 3
+       if newPassword == Password_check:  
             s = session()
+            #  Rule 7
             user_check = s.query(User).filter_by(username=newUsername, email=newEmail, password=newPassword).first()
 
             if user_check:
                 print("User already exists")
+            # Rule 6
             elif "@" not in newEmail:
                 self.ids.regis_email_input.error = True
                 self.ids.regis_email_input.helper_text = "Invalid email without @"
-                print("Invalid email without @")
+                print("Invalid email without @")            
+            ''' Rule 1,2,4'''
             elif len(newUsername) < 6:
                 self.ids.regis_username_input.error = True
                 self.ids.regis_username_input.helper_text = "Length is not enough. It should be at least 6."
@@ -716,8 +751,9 @@ def try_register(self):
             else:
                 self.ids.regis_email_input.error = False
                 self.ids.regis_username_input.error = False
-                # self.ids.regis_password.error = False
-
+                self.ids.regis_password.error = False
+  
+                # add new user in the database
                 newUsr = User(username=newUsername, email=newEmail,password=hash_password)
                 s.add(newUsr)
                 s.commit()
