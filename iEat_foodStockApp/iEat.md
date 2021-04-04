@@ -10,6 +10,7 @@ updated due to the usability of the online note and things were not recorded in 
 what food she has and the expired date of the food as well as keep track on the calories she intakes for every meal. The following is one of the conversations we 
 had.
 <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/evidence.png" width = "600" height = "500" >
+
 Fig 0. Interview evidence
 
 
@@ -65,8 +66,10 @@ Fig 4. ER Diagram for the system ( One to one relationship between the user and 
 The following is the code for the program.
 
 - ###  .kv
+(Need to explain the layouts and different elements, widgets used)
 
-The following is for creating the screens included in the app. The app includes a login screen, a register screen, a home screen, a storage screen and an add-item screen.
+The following is for creating the screens included in the app. The app includes a login screen, a register screen, a home screen, a storage screen and an add-item 
+screen.
 ```
 ScreenManager:
     id: scr_manager
@@ -89,6 +92,7 @@ ScreenManager:
 ```
 The following is for the UI for the login screen. It looks like this:
 <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/login.png" width = "900" height = "700">
+Figure 5. Login Screen
 
 ```
 <LoginScreen>:
@@ -189,6 +193,7 @@ The following is for the UI for the login screen. It looks like this:
 ```
 The following is the UI for the register screen.
 <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/register.png" width = "900" height = "700">
+Figure 6. Register Screen
 
 ```
 <RegisterScreen>:
@@ -290,6 +295,7 @@ The following is the UI for the register screen.
 ```
 The following is the UI for the home screen.
 <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_home.png" width = "900" height = "700">
+Figure 7. Home Screen
 
 ```
 <HomeScreen>:
@@ -348,8 +354,10 @@ The following is the UI for the home screen.
 ```
 The following is the UI for the add screen.
 <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_add.png" width = "900" height = "700">
+Figure 8.1 Add Screen
 As expected, there is a calendar for date picking.
 <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_calendar.png" width = "900" height = "700">
+Figure 8.2 Add Screen - calendar
 ```
 <AddScreen>:
     BoxLayout:
@@ -429,6 +437,7 @@ As expected, there is a calendar for date picking.
 ```
 The following is the UI for the store screen.
 <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_storage.png" width = "900" height = "700">
+Figure 9. Store Screen
 
 ```
 <StoreScreen>:
@@ -498,7 +507,6 @@ The following is the UI for the store screen.
                         text: "Expired Date"
                         font_style: "Subtitle1"
                         halign: "center"
-
 
 ```
 - ###  .py
