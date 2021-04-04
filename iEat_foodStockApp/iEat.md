@@ -658,6 +658,9 @@ inputed username and email address. However, we don't want users' password being
 a`salt number` which is a random hashed number to encrypt the password into a constant 512 bits string stored in our database. This can largely help protect the 
 privacy of the app users.
 
+Here is what hash looks like in the database: (
+<img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_hash_password.png" width = "800" height = "100" >
+
 ```.py
 class RegisterScreen(MDScreen):
 
@@ -670,7 +673,10 @@ class RegisterScreen(MDScreen):
         pwdhash = binascii.hexlify(pwdhash) #hashing the password with the salt producing 256 bits or 64 hex chars
         return (salt + pwdhash).decode('ascii') #total lenght is 128 chars or 512 bits
 ```
+
 Then create a function for registering. In our register system, we set several rules for our users:
+*For user 1, it's for very basic testing and more quickly logging into the app so it won't be applied by the rules following
+
 1. A valid username, email or password should be all at least 6 characters long.
 2. The user is required to fill out every textfield shown in the app.
 3. The user has to input the password twice to confirm the password.
@@ -723,6 +729,108 @@ def try_register(self):
             print("The passwords do not match.")
 
 ```
+### Home 
+```.py
+class HomeScreen(MDScreen):
+    pass
+```
+#### Storage 
+Create a class for the storage screen. The main element on a storage screen is the tables to show the food our users have. By using loop, the items, calories and expired date will be fetched from the database to be printed out.
+
+```.py
+class StoreScreen(MDScreen):
+    def print_data(self):
+
+        s = session()
+
+        self.ids.container1.clear_widgets()
+        show_date = MDLabel(text="Expired date:",font_style="Subtitle1",halign="center")
+
+        self.ids.container1.add_widget(show_date)
+        storage = s.query(Storage).order_by(desc('expired_date')).filter_by(User_id=LoginScreen.User_id).all()
+        item = MDLabel(text="Item", font_style="Subtitle1", halign="center")
+        self.ids.container1.add_widget(item)
+        calories = MDLabel(text="Calories", font_style="Subtitle1", halign="center")
+        self.ids.container1.add_widget(calories)
+        date = MDLabel(text="Expired Date", font_style="Subtitle1", halign="center")
+        self.ids.container1.add_widget(date)
+
+        for i in storage:
+            item = MDLabel(text=str(storage.item), halign="center")
+            self.ids.container.add_widget(item)
+            calories = MDLabel(text=str(storage.calories), halign="center")
+            self.ids.container.add_widget(calories)
+            date = MDLabel(text=str(storage.expired_date), halign="center")
+            self.ids.container.add_widget(date)
+            print("print data")
+
+```
+Create a class for the add-item screen. The followin is to create a calendar for picking the expired date of the items.
+```.py
+class AddScreen(MDScreen):
+    item_name = None
+    calories = None
+    select_date = None
+
+    def on_save(self, instance, value, date_range):
+        '''
+        Events called when the "OK" dialog box button is clicked.
+
+        :type instance: <kivymd.uix.picker.MDDatePicker object>;
+
+        :param value: selected date;
+        :type value: <class 'datetime.date'>;
+
+        :param date_range: list of 'datetime.date' objects in the selected range;
+        :type date_range: <class 'list'>;
+        '''
+
+        print(value)
+        AddScreen.select_date = value
+        #create value so I can recall in another method
+
+    def on_cancel(self, instance, value):
+        '''Events called when the "CANCEL" dialog box button is clicked.'''
+        print("cancel")
+
+    def show_date_picker(self):
+        date_dialog = MDDatePicker(self)
+        date_dialog.bind(on_save=self.on_save, on_cancel=self.on_cancel)
+        date_dialog.open()
+        #method to create datePicker widget
+   
+```
+Create a function to allow the users to add the items to their own foodstock.
+```.py
+def add_item(self):
+        User_id = LoginScreen.User_id
+        item_name = self.ids.item_input.text
+        calories = self.ids.calorie_input.text
+        expired_date = AddScreen.expired_date
+
+        AddScreen.item_name = item_name
+        AddScreen.calories = calories
+        AddScreen.expired_date = expired_date
+
+
+        s = session()
+        NewItem = Storage(User_id=User_id,item_name=item_name,calories = calories,expired_date = expired_date)
+        s.add(NewItem)
+        s.commit()
+        s.close()
+        print("Successfully add the item!")
+
+```
+### Set up the app 
+```.py
+class MainApp(MDApp):
+    def build(self):
+        self.theme_cls.primary_palette = 'Brown'
+        return
+
+MainApp().run()
+```
+
 
 
 ## Criteria D: Functionality
