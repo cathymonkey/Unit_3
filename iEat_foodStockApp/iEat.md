@@ -658,8 +658,8 @@ inputed username and email address. However, we don't want users' password being
 a`salt number` which is a random hashed number to encrypt the password into a constant 512 bits string stored in our database. This can largely help protect the 
 privacy of the app users.
 
-Here is what hash looks like in the database: (
-<img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_hash_password.png" width = "800" height = "100" >
+Here is what hash looks like in the database: 
+<img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_hash_password.png" width = "800" height = "120" >
 
 ```.py
 class RegisterScreen(MDScreen):
