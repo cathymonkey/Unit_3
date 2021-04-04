@@ -95,7 +95,7 @@ ScreenManager:
 
 ```
 The following is for the UI for the login screen. It looks like this:
-<img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/login.png" width = "900" height = "700">
+<img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/login.png" width = "720" height = "560">
 
 Figure 5. Login Screen
 
@@ -197,7 +197,7 @@ Figure 5. Login Screen
 
 ```
 The following is the UI for the register screen.
-<img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/register.png" width = "900" height = "700">
+<img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/register.png" width = "720" height = "560">
 
 Figure 6. Register Screen
 
@@ -300,7 +300,7 @@ Figure 6. Register Screen
                 root.parent.current = "LoginScreen"
 ```
 The following is the UI for the home screen.
-<img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_home.png" width = "900" height = "700">
+<img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_home.png" width = "720" height = "560">
 
 Figure 7. Home Screen
 
@@ -360,11 +360,11 @@ Figure 7. Home Screen
 
 ```
 The following is the UI for the add screen.
-<img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_add.png" width = "900" height = "700">
+<img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_add.png" width = "720" height = "560">
 
 Figure 8.1 Add Screen
 As expected, there is a calendar for date picking.
-<img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_calendar.png" width = "900" height = "700">
+<img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_calendar.png" width = "720" height = "560">
 
 Figure 8.2 Add Screen - calendar
 ```
@@ -445,7 +445,7 @@ Figure 8.2 Add Screen - calendar
 
 ```
 The following is the UI for the store screen.
-<img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_storage.png" width = "900" height = "700">
+<img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_storage.png" width = "720" height = "560">
 Figure 9. Store Screen
 
 ```
@@ -519,6 +519,211 @@ Figure 9. Store Screen
 
 ```
 - ###  .py
+
+### Preset
+The following is to set the window size of the app. Since the app window is not responsive, custom size of the window may ruin the visual experience of using the 
+app as the designed layout will be messed up.
+
+```.py
+from kivy.config import Config
+from kivy.properties import partial, Clock, BooleanProperty
+
+Config.set('graphics', 'resizable', '0')  ##0 being off 1 being on as in true/false
+Config.set('graphics', 'width', '900')
+Config.set('graphics', 'height', '700')
+
+```
+### Modules and libraries
+The following is to import modules and different libraries we will be using later. 
+```.py
+from kivy.lang import Builder
+from kivy.uix.behaviors import ButtonBehavior
+from kivymd.app import MDApp
+from kivymd.uix.label import MDLabel
+from kivy.uix.boxlayout import BoxLayout
+from kivymd.uix.screen import MDScreen
+from kivy.properties import ObjectProperty
+
+from kivy.metrics import dp
+from kivy.uix.anchorlayout import AnchorLayout
+from kivymd.app import MDApp
+from kivymd.uix.picker import MDDatePicker
+from kivy.uix.widget import Widget
+
+import sqlite3
+from sqlalchemy import Column, String, Integer, ForeignKey, DateTime, desc
+from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+```
+### Database
+Create database for users and foodstock.
+```.py
+Base = declarative_base()
+
+
+class User(Base):
+    __tablename__ = 'User'
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    username = Column(String(20))
+    email = Column(String(50))
+    password = Column(String(50))
+
+    def __init__(self, username, email, password):
+        self.username = username
+        self.email = email
+        self.password = password
+class Storage(Base):
+    __tablename__ = "Storage"
+    id = Column(Integer,primary_key = True,autoincrement=True)
+    User_id = Column(Integer,ForeignKey('User.id'))
+    item_name = Column(String)
+    calories = Column(String)
+    expired_date = Column(DateTime)
+
+    def __init__(self,User_id,item_name,calories,expired_date):
+        self.item_name = item_name
+        self.calories = calories
+        self.expired_date = expired_date
+        self.User_id = User_id
+
+
+engine = create_engine('sqlite:///foodstock.sqlite')
+session = sessionmaker()
+session.configure(bind=engine)
+Base.metadata.create_all(engine)
+
+```
+### Log in
+Create a class for login screen
+```.py
+class LoginScreen(MDScreen):
+    User_id = None
+    stored_password = None
+```
+Then create two functions to validate the users and password before people actually login in. *Note: passwords have been hashed and we will go through this later.
+```.py
+def verify_password(stored_password, provided_password):
+        """Verify a stored password against one provided by user"""
+        salt = stored_password[:64]
+        stored_password = stored_password[64:]
+        pwdhash = hashlib.pbkdf2_hmac('sha256',
+                                      provided_password.encode('utf-8'),
+                                      salt.encode('ascii'),
+                                      100000)
+        pwdhash = binascii.hexlify(pwdhash).decode('ascii')
+        return pwdhash == stored_password
+
+def validate_user(self):
+    self.ids.password_input.error = True
+    self.ids.password_input.helper_text = "Incorrect username or password"
+    print(self.ids.username_input.error)
+    print(self.ids.username_input.helper_text)
+
+```
+Create a function for login that include the two functions `validate_user` and `verify_ password`we mentioned before.
+```.py
+def try_login(self):
+        # engine = create_engine('sqlite:///foodstock.sqlite')
+        username = self.ids.username_input.text
+        email = self.ids.email_input.text
+        password = self.ids.password_input.text
+        session = sessionmaker(bind=engine)
+        s = session()
+        validate_user = s.query(User).filter_by(username=username, email=email).one_or_none()
+        if validate_user:
+            print("User exists")
+            LoginScreen.User_id = validate_user.id
+            stored_password = s.query(User).get(validate_user.id).password
+
+            print("stored_password")
+            if LoginScreen.verify_password(stored_password,password) == True:
+                self.parent.current = 'HomeScreen'
+
+        else:
+            print("User does not exist")
+            self.validate_user()
+        s.close()
+
+```
+### Buttons 
+The following is to create a class for all the buttons we used in kivy.
+```.py
+class ButtonLabel(ButtonBehavior, MDLabel):
+    pass
+```
+### Register
+Create a class for the register screen. When the user inputs the password, the password will be recorded in the database as well as the auto-generated user id, 
+inputed username and email address. However, we don't want users' password being recorded directly without encryption; so, we also need to use `hash` and add 
+a`salt number` which is a random hashed number to encrypt the password into a constant 512 bits string stored in our database. This can largely help protect the 
+privacy of the app users.
+
+```.py
+class RegisterScreen(MDScreen):
+
+    def hash_password(self):
+        password = self.ids.regis_password_input.text
+        """Hash a password for storing."""
+        salt = hashlib.sha256(os.urandom(60)).hexdigest().encode('ascii') #hashing a ramdom sequence with 60 bits: produces 256 bits or 64 hex chars
+        pwdhash = hashlib.pbkdf2_hmac('sha256', password.encode('utf-8'),
+                                      salt, 100000)
+        pwdhash = binascii.hexlify(pwdhash) #hashing the password with the salt producing 256 bits or 64 hex chars
+        return (salt + pwdhash).decode('ascii') #total lenght is 128 chars or 512 bits
+```
+Then create a function for registering. In our register system, we set several rules for our users:
+1. A valid username, email or password should be all at least 6 characters long.
+2. The user is required to fill out every textfield shown in the app.
+3. The user has to input the password twice to confirm the password.
+4. The user cannot register with nothing.
+5. The maximum length for each textfield is shown in the app. The characters are counted automatically, so if the length excceeds, the textfield will turn red.
+6. A valid email has to contain "@".
+```.py
+def try_register(self):
+        newUsername = self.ids.regis_username_input.text
+        newEmail = self.ids.regis_email_input.text
+        newPassword = self.ids.regis_password_input.text
+        Password_check = self.ids.password_check.text
+        hash_password = RegisterScreen.hash_password(self)
+        
+       if newPassword == Password_check:
+            s = session()
+            user_check = s.query(User).filter_by(username=newUsername, email=newEmail, password=newPassword).first()
+
+            if user_check:
+                print("User already exists")
+            elif "@" not in newEmail:
+                self.ids.regis_email_input.error = True
+                self.ids.regis_email_input.helper_text = "Invalid email without @"
+                print("Invalid email without @")
+            elif len(newUsername) < 6:
+                self.ids.regis_username_input.error = True
+                self.ids.regis_username_input.helper_text = "Length is not enough. It should be at least 6."
+                print("Length for username is not enough. It should be at least 6.")
+            elif len(newEmail) < 6:
+                self.ids.regis_email_input.error = True
+                self.ids.regis_email_input.helper_text = "Length for email is not enough. It should be at least 6."
+                print("Length for email is not enough. It should be at least 6.")
+            elif len(newPassword) < 6:
+                self.ids.regis_password.error = True
+                self.ids.regis_password_input.helper_text = "Password is too short.It should be at least 6."
+                print("Length for password is too short. It should be at least 6.")
+            else:
+                self.ids.regis_email_input.error = False
+                self.ids.regis_username_input.error = False
+                # self.ids.regis_password.error = False
+
+                newUsr = User(username=newUsername, email=newEmail,password=hash_password)
+                s.add(newUsr)
+                s.commit()
+                s.close()
+        else:
+            RegisterScreen.hash_password(newPassword)
+            s = session()
+            s.close()
+            print("The passwords do not match.")
+
+```
+
 
 ## Criteria D: Functionality
 - ### Success Criteria
