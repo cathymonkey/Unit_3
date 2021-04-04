@@ -862,11 +862,17 @@ def add_item(self):
 ```.py
 class MainApp(MDApp):
     def build(self):
+    # set up the theme color
         self.theme_cls.primary_palette = 'Brown'
+    # set up the icon as Figure 10 shown    
+        self.icon = "icon.png"
         return
 
 MainApp().run()
 ```
+<img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_icon.png" width = "230" height = "300" >
+
+Figure 10. Custom Icon
 
 
 
