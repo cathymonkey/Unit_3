@@ -30,18 +30,22 @@ app, learning resources can be easily found and instructors who know Python will
 
 - ### Sketch
 <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/sketch.jpeg" width = "600" height = "500" >
+
 Fig 1. sketch for GUI
 
 - ### System Flow Diagram
 <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_systemFlow.png" width = "800" height = "360">
+
 Fig 2. System Flow Diagram 
 
 - ### UML Diagram
 <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_UML.png" width = "650" height = "350">
+
 Fig 3. UML Diagram
 
 - ### ER Diagram
 <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_ERdiagram.png" width = "900" height = "350">
+
 Fig 4. ER Diagram for the system ( One to one relationship between the user and the food storage database)
 
 - ### Normalised Tables
@@ -92,6 +96,7 @@ ScreenManager:
 ```
 The following is for the UI for the login screen. It looks like this:
 <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/login.png" width = "900" height = "700">
+
 Figure 5. Login Screen
 
 ```
@@ -193,6 +198,7 @@ Figure 5. Login Screen
 ```
 The following is the UI for the register screen.
 <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/register.png" width = "900" height = "700">
+
 Figure 6. Register Screen
 
 ```
@@ -295,6 +301,7 @@ Figure 6. Register Screen
 ```
 The following is the UI for the home screen.
 <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_home.png" width = "900" height = "700">
+
 Figure 7. Home Screen
 
 ```
@@ -354,9 +361,11 @@ Figure 7. Home Screen
 ```
 The following is the UI for the add screen.
 <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_add.png" width = "900" height = "700">
+
 Figure 8.1 Add Screen
 As expected, there is a calendar for date picking.
 <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_calendar.png" width = "900" height = "700">
+
 Figure 8.2 Add Screen - calendar
 ```
 <AddScreen>:
