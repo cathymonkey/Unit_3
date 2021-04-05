@@ -956,6 +956,7 @@ accident. I think copying the database to the cloud drive can secure the data an
 
 The following is what my client Isabel said,"The image use and the design for the placement of UI is clever. And it's a good idea to have a table to show the food 
 stock. For future using, I would like to have a drop down menu of multiple items instead of me adding each item every time. Also, it's better to have the function 
-for me to edit the table like deleting items I have eaten.
+for me to edit the table like deleting items I have eaten. 
+Above is very useful advice I think. I will elaborate the app during summer or whenever I have time.
 
 
