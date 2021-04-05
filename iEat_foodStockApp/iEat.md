@@ -948,18 +948,23 @@ To improve and debug the program, I went through three rounds of testing: Alpha 
 | Show item    | Check the table.                                                          | The screen will be directed to the add-item screen showing two textfields for the users to input the item and calories. There will be a calendar popping up to allow the user to pick the date. After clicking "Save", the added item and its info can be seen in the Storage database and the screen will go back to the home screen. | Yes     |
 
 - ### App Improvements
-- **Cloud backup** Since the users inforamtion and item information are currently stored in the local disk(PyCharm file) so it's risky for all those information 
+- **Cloud backup** 
+  - Since currently the user inforamation and storage information are stored in the local disk(PyCharm file), there is no cloud backup for the 
+database. Then it's risky for the information to all be stored in one place as the local disk may be full to override the data or be manually deleted by 
+accident. I think copying the database to the cloud drive can secure the data and can largely reduce the possibility of data loss.
+
 - **Functionalities**
-  - allow the user to edit the amount of the food like the picture shows(amazon) and edit the table in general
+  The app needs to have more functionalities such as the followings:
+  - allow the user to edit the amount of the food like the picture shows(Amazon) and edit the table in general;
   <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_opt_amount.png" width = "330" height = "180" >        <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_amount.png" width = "300" height = "280" >
   
-  - Toast functions to show the error more clearly to the user
-  - logo on the desktop when opening the app
-  - make it responsive
-  - add more functions to the app
-  - stregthen the interaction with the user. eg."Welcome xxxx!" 
+  - employ `Toast` function to show the error messages to the user right on the App UI;
+  - make the app window responsive;
+  - add more functions to the app;
   - etc.
-  - 
-- [ ] this is an incomplete item
+
+- **App UI Design**
+- Due to the time limit, the design of the app is rough and lacks of custom settings for the users such as the theme color. I hope the app UI can give the user a feeling of welcome to strengthen the interaction with the user(Eg."Welcome xxxx!"). Also I will try to come up with a better name for the app and sketch a more attrative logo.
+
 
 
