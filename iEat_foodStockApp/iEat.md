@@ -742,51 +742,33 @@ def try_register(self):
         newUsername = self.ids.regis_username_input.text
         newEmail = self.ids.regis_email_input.text
         newPassword = self.ids.regis_password_input.text
-        Password_check = self.ids.password_check.text
+        password_check = self.ids.password_check.text
         hash_password = RegisterScreen.hash_password(self)
-        
-       # Rule 3
-       if newPassword == Password_check:  
-            s = session()
-            #  Rule 7
-            user_check = s.query(User).filter_by(username=newUsername, email=newEmail, password=newPassword).first()
 
-            if user_check:
-                print("User already exists")
-            # Rule 6
-            elif "@" not in newEmail:
-                self.ids.regis_email_input.error = True
-                self.ids.regis_email_input.helper_text = "Invalid email without @"
-                print("Invalid email without @")            
-            ''' Rule 1,2,4'''
-            elif len(newUsername) < 6:
-                self.ids.regis_username_input.error = True
-                self.ids.regis_username_input.helper_text = "Length is not enough. It should be at least 6."
-                print("Length for username is not enough. It should be at least 6.")
-            elif len(newEmail) < 6:
-                self.ids.regis_email_input.error = True
-                self.ids.regis_email_input.helper_text = "Length for email is not enough. It should be at least 6."
-                print("Length for email is not enough. It should be at least 6.")
-            elif len(newPassword) < 6:
-                self.ids.regis_password.error = True
-                self.ids.regis_password_input.helper_text = "Password is too short.It should be at least 6."
-                print("Length for password is too short. It should be at least 6.")
-            else:
-                self.ids.regis_email_input.error = False
-                self.ids.regis_username_input.error = False
-                self.ids.regis_password.error = False
-  
-                # add new user in the database
-                newUsr = User(username=newUsername, email=newEmail,password=hash_password)
-                s.add(newUsr)
-                print("User created")
-                s.commit()
-                s.close()
+        if newPassword != password_check:
+            print("Passwords do not match.")
+
+        s = session()
+        user_check = s.query(User).filter_by(username=newUsername, email=newEmail, password=newPassword).first()
+        if user_check:
+            print("User already exists")
+        elif "@" not in newEmail:
+            self.ids.regis_email_input.error = True
+            self.ids.regis_email_input.helper_text = "Invalid email without @"
+
+            print("Invalid email without @")
+
+        elif len(newPassword) < 6:
+
+            print("Length for password is too short. It should be at least 6.")
+
         else:
-            RegisterScreen.hash_password(newPassword)
             s = session()
+            newUsr = User(username=newUsername, email=newEmail, password=hash_password)
+            s.add(newUsr)
+            print("User created")
+            s.commit()
             s.close()
-            print("The passwords do not match.")
 
 ```
 ### Home 
@@ -921,9 +903,9 @@ To improve and debug the program, I went through three rounds of testing: Alpha 
 | 1.       | Click "Register Here" and input the username, email and password. Click "submit".                                                                                                  | After clicking "submit", it will show "User created" in the console. Then the user will be directed to login screen.                                                                                                                                                                                                                   | 1                | Success  |
 | 2.       | Type all required information and log in.                                                                                                                                          | Log in successfully and be directed to the home screen.                                                                                                                                                                                                                                                                                | 1                | Success  |
 | 3.       | Check the database in pyCharm.                                                                                                                                                     | There are two databases: User and Storage.                                                                                                                                                                                                                                                                                             | 2                | Success  |
-| 4.       | Click the "Add Food" button and input information needed. Click"select expired date" to the choose the date by using a calendar. Then click "save" and check the Storage database. | The screen will be directed to the add-item screen showing two textfields for the users to input the item and calories. There will be a calendar popping up to allow the user to pick the date. After clicking "Save", the added item and its info can be seen in the Storage database and the screen will go back to the home screen. | 5                | Success  |
-| 5.       | Click "Go to Your Food Storage" and click refresh button to check the food stock.                                                                                                  | The screen will be directed to the storage screen showing a table with the item we just added.                                                                                                                                                                                                                                         | 3                | Success  |
-| 6.       | Go back to the login screen and register with the same username or email again. Click "submit".                                                                                    | It will show "User already existed" in the console.                                                                                                                                                                                                                                                                                    | 6                | Success  |
+| 4.       | Click the "Add Food" button and input information needed. Click"select expired date" to the choose the date by using a calendar. Then click "save" and check the Storage database. | The screen will be directed to the add-item screen showing two textfields for the users to input the item and calories. There will be a calendar popping up to allow the user to pick the date. After clicking "Save", the added item and its info can be seen in the Storage database and the screen will go back to the home screen. | 5                |Partially fail |
+| 5.       | Click "Go to Your Food Storage" and click refresh button to check the food stock.                                                                                                  | The screen will be directed to the storage screen showing a table with the item we just added.                                                                                                                                                                                                                                         | 3                | Fail  |
+| 6.       | Go back to the login screen and register with the same username or email again. Click "submit".                                                                                    | It will show "User already existed" in the console.                                                                                                                                                                                                                                                                                    | 6                | Partially fail  |
 | 7.       | So far, we have multiple screens included in the app.                                                                                                                              | Screens switch among each other.                                                                                                                                                                                                                                                                                                       | 4                | Success  |
 
 - ### Beta testing
@@ -932,8 +914,8 @@ To improve and debug the program, I went through three rounds of testing: Alpha 
 | 1.       | Click "Register Here" and input "monkey" as username, "monkey@monkey" as email and "monkey" as password. Click "submit".                                                                                                  | After clicking "submit", it will show "User created" in the console. Then the user will be directed to the login screen.                                                                                                                                                                                                                   | 1                | Yes  |
 | 2.       | Type all required information and log in.                                                                                                                                          | Log in successfully and be directed to the home screen.                                                                                                                                                                                                                                                                                | 1                | Yes |
 | 3.       | Check the database in pyCharm.                                                                                                                                                     | There are two databases: User and Storage. For the password in `User`, it should be hashed which is a 512-bit-long string.                                                                                                                                                                                                                                                                                             | 2                | Yes  |
-| 4.       | Click the "Add Food" button and input information needed. Click"select expired date" to the choose the date by using a calendar. Then click "save" and check the Storage database. | The screen will be directed to the add-item screen showing two textfields for the users to input the item and calories. There will be a calendar popping up to allow the user to pick the date. After clicking "Save", the added item and its info can be seen in the Storage database and the screen will go back to the home screen. | 5                | Yes  |
-| 5.       | Click "Go to Your Food Storage" and click refresh button to check the food stock.                                                                                                  | The screen will be directed to the storage screen showing a table with the item we just added.                                                                                                                                                                                                                                         | 3                | Yes  |
+| 4.       | Click the "Add Food" button and input information needed. Click"select expired date" to the choose the date by using a calendar. Then click "save" and check the Storage database. | The screen will be directed to the add-item screen showing two textfields for the users to input the item and calories. There will be a calendar popping up to allow the user to pick the date. After clicking "Save", the added item and its info can be seen in the Storage database and the screen will go back to the home screen. | 5                | Partially yes as the expired date cannot be stored due to the disability of the calendar picker. |
+| 5.       | Click "Go to Your Food Storage" and click refresh button to check the food stock.                                                                                                  | The screen will be directed to the storage screen showing a table with the item we just added.                                                                                                                                                                                                                                         | 3                | Partially yes as the expired date cannot be stored due to the disability of the calendar picker.  |
 | 6.       | Go back to the login screen and register with the same username or email again. Click "submit".                                                                                    | It will show "User already existed" in the console.                                                                                                                                                                                                                                                                                    | 6                | Yes |
 | 7.       | So far, we have multiple screens included in the app.                                                                                                                              | Screens switch among each other.                                                                                                                                                                                                                                                                                                       | 4                | Yes |
 
@@ -941,11 +923,12 @@ To improve and debug the program, I went through three rounds of testing: Alpha 
 
 | Unit Testing | Step                                                                      | Expected Outcome                                                                                                                                                                                                                                                                                                                       | Success? |
 |--------------|---------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| Login        | Input different types of invalid usernames, emails and passwords.         | NOT allowed to log in and messages to show errors are printed in the console.                                                                                                                                                                                                                                                          | Yes      |
+| Login        | Input different types of invalid emails or passwords.         | NOT allowed to log in and messages to show errors are printed in the console.                                                                                                                                                                                                                                                          | Yes      |
 | Register     | Input different types of invalid information(same as login testing above) | Error messages are printed in the console.                                                                                                                                                                                                                                                                                             | Yes      |
-| Add item     | Check the database in pyCharm.                                            | Storage database has been updated. Message like "saved"  is printed in the console.                                                                                                                                                                                                                                                    | Yes      |
+| Register/ Log in     | Input nothing | Error messages are printed in the console.                                                                                                                                                                                                                                                                                             | Yes      |
+| Add item     | Check the database in pyCharm.                                            | Storage database has been updated. Message like "saved"  is printed in the console.                                                                                                                                                                                                                                                    | Partially yes as the expired date isn't shown due to the disability of the calendar.     |
 | Add item     | Input nothing when adding the item.                                       | Error messages are printed in the console.                                                                                                                                                                                                                                                                                             | No       |
-| Show item    | Check the table.                                                          | The screen will be directed to the add-item screen showing two textfields for the users to input the item and calories. There will be a calendar popping up to allow the user to pick the date. After clicking "Save", the added item and its info can be seen in the Storage database and the screen will go back to the home screen. | Yes     |
+| Show item    | Check the table.                                                          | The screen will be directed to the add-item screen showing two textfields for the users to input the item and calories. There will be a calendar popping up to allow the user to pick the date. After clicking "Save", the added item and its info can be seen in the Storage database and the screen will go back to the home screen. | Partially yes, the table unfortunately can't show the items.    |
 
 - ### App Improvements
 - **Cloud backup** 
@@ -968,5 +951,11 @@ accident. I think copying the database to the cloud drive can secure the data an
   - Due to the time limit, the design of the app is rough and lacks of custom settings for the users such as the theme color. I hope the app UI can give the user a 
    feeling of welcome to strengthen the interaction with the user(Eg."Welcome xxxx!"). Also I will try to come up with a better name for the app and sketch a more 
    attrative logo.
+
+- **Client Feedback**
+
+The following is what my client Isabel said,"The image use and the design for the placement of UI is clever. And it's a good idea to have a table to show the food 
+stock. For future using, I would like to have a drop down menu of multiple items instead of me adding each item every time. Also, it's better to have the function 
+for me to edit the table like deleting items I have eaten.
 
 
