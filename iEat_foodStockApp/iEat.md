@@ -9,6 +9,7 @@ My client Isabel wants to have an app which includes a database to help her bett
 updated due to the usability of the online note and things were not recorded in neat. Therefore, by using this app, she wants to get a clear overview of
 what food she has and the expired date of the food as well as keep track on the calories she intakes for every meal. The following is one of the conversations we 
 had.
+
 <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/evidence.png" width = "600" height = "500" >
 
 Fig 0. Interview evidence
@@ -94,7 +95,9 @@ ScreenManager:
         name:"AddScreen"
 
 ```
-The following is for the UI for the login screen. The login screen should allow the user to type in personal information to log in. Also, there is a button `Register Here` to guide the user to the register if the user hasn't had an account yet. It looks like this:
+The following is for the UI for the login screen. The login screen should allow the user to type in personal information to log in. Also, there is a button 
+`Register Here` to guide the user to the register if the user hasn't had an account yet. It looks like this:
+
 <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/login.png" width = "720" height = "560">
 
 Figure 5. Login Screen
@@ -209,6 +212,7 @@ Figure 5. Login Screen
 ```
 The following is the UI for the register screen. It's pretty similar to the login screen but the user need to confirm their passwords by typing twice and there is 
 a button `submit` for uploading the information to the database. `Back`button is for people who accidentally click `Register Here`to return to the login screen. 
+
 <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/register.png" width = "720" height = "560">
 
 Figure 6. Register Screen
