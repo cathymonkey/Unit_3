@@ -954,6 +954,7 @@ database. Then it's risky for the information to all be stored in one place as t
 accident. I think copying the database to the cloud drive can secure the data and can largely reduce the possibility of data loss.
 
 - **Functionalities**
+  
   The app needs to have more functionalities such as the followings:
   - allow the user to edit the amount of the food like the picture shows(Amazon) and edit the table in general;
   <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_opt_amount.png" width = "330" height = "180" >        <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_amount.png" width = "300" height = "280" >
@@ -964,7 +965,9 @@ accident. I think copying the database to the cloud drive can secure the data an
   - etc.
 
 - **App UI Design**
-- Due to the time limit, the design of the app is rough and lacks of custom settings for the users such as the theme color. I hope the app UI can give the user a feeling of welcome to strengthen the interaction with the user(Eg."Welcome xxxx!"). Also I will try to come up with a better name for the app and sketch a more attrative logo.
+ - Due to the time limit, the design of the app is rough and lacks of custom settings for the users such as the theme color. I hope the app UI can give the user a 
+   feeling of welcome to strengthen the interaction with the user(Eg."Welcome xxxx!"). Also I will try to come up with a better name for the app and sketch a more 
+   attrative logo.
 
 
 
