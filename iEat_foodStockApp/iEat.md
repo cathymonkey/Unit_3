@@ -906,8 +906,8 @@ Figure 10. Custom Icon
 - ### Unit testing
 
 - ### App Improvements
-- Cloud backup
-- Functionalities 
+- **Cloud backup**
+- **Functionalities**
   - allow the user to edit the amount of the food like the picture shows(amazon) and edit the table in general
   <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_opt_amount.png" width = "330" height = "180" >        <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_amount.png" width = "300" height = "280" >
   
