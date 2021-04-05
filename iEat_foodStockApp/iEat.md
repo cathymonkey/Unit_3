@@ -320,6 +320,7 @@ Figure 6. Register Screen
                 root.parent.current = "LoginScreen"
 ```
 The following is the UI for the home screen. It contains two buttons `Go to Your Food Storage` and `Add Food`.
+
 <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_home.png" width = "720" height = "560">
 
 Figure 7. Home Screen
@@ -777,7 +778,7 @@ def try_register(self):
 class HomeScreen(MDScreen):
     pass
 ```
-#### Storage 
+### Storage 
 Create a class for the storage screen. The main element on a storage screen is the tables to show the food our users have. By using loop, the items, calories and expired date will be fetched from the database to be printed out.
 
 ```.py
