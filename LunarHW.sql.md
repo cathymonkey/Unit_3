@@ -31,7 +31,6 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-
 base = declarative_base()
 engine = create_engine('sqlite:///genericApp.sqlite')
 session = sessionmaker(bind=engine)
