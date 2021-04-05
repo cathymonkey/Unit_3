@@ -934,7 +934,10 @@ To improve and debug the program, I went through three rounds of testing: Alpha 
 - **Cloud backup** 
   - Since currently the user inforamation and storage information are stored in the local disk(PyCharm file), there is no cloud backup for the 
 database. Then it's risky for the information to all be stored in one place as the local disk may be full to override the data or be manually deleted by 
-accident. I think copying the database to the cloud drive can secure the data and can largely reduce the possibility of data loss.
+accident. I think copying the database to the cloud drive can secure the data and can largely reduce the possibility of data loss. I have searched a way but I am 
+not sure if it's the most approriate in this case. It is by adding google sheet API to python to store the databse in the google drive. Maybe I can try sometime or 
+find something better. 
+
 
 - **Functionalities**
   
