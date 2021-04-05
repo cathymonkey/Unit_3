@@ -471,6 +471,7 @@ Figure 8.2 Add Screen - calendar
 ```
 The following is the UI for the store screen. It will display the user's food stock in the form of a table showing the name, calories and expired date of each 
 item.
+
 <img src = "https://github.com/cathymonkey/Unit_3/blob/main/iEat_foodStockApp/t_storage.png" width = "720" height = "560">
 
 Figure 9. Store Screen
