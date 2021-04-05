@@ -965,7 +965,7 @@ accident. I think copying the database to the cloud drive can secure the data an
   - etc.
 
 - **App UI Design**
- - Due to the time limit, the design of the app is rough and lacks of custom settings for the users such as the theme color. I hope the app UI can give the user a 
+  - Due to the time limit, the design of the app is rough and lacks of custom settings for the users such as the theme color. I hope the app UI can give the user a 
    feeling of welcome to strengthen the interaction with the user(Eg."Welcome xxxx!"). Also I will try to come up with a better name for the app and sketch a more 
    attrative logo.
 
