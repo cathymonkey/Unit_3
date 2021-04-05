@@ -757,6 +757,7 @@ def try_register(self):
                 # add new user in the database
                 newUsr = User(username=newUsername, email=newEmail,password=hash_password)
                 s.add(newUsr)
+                print("User created")
                 s.commit()
                 s.close()
         else:
