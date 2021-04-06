@@ -1,7 +1,7 @@
 # iEat
 
 ``iEat`` -- a food stock app
-
+[rewrite the success criteria, specify the unit testing, erase the beta testing]
 
 ## Criteria A: Planning
 - ### Context of the problem
